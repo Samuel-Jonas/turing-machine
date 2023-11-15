@@ -67,6 +67,9 @@ def turing_machine(input_str):
 
     print(tape)
 
+    if len(tape) == 0 or tape[tape_index] == '⊔':
+        current_state = accept_state
+
     while current_state != accept_state and current_state != reject_state:
         symbol_under_head = tape[tape_index]
         if (current_state, symbol_under_head) in transition_map:
@@ -84,4 +87,4 @@ def turing_machine(input_str):
     else:
         print("Rejected")
 
-turing_machine("00111⊔")
+turing_machine("011⊔")
